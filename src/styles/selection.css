@@ -1,0 +1,121 @@
+/* ===== SELECTION SCREEN ===== */
+.selection {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #dc2626, #991b1b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px;
+}
+
+.selection__title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.selection__subtitle {
+  color: #fca5a5;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.selection__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 640px) {
+  .selection__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pokemon-card-select {
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  border: 3px solid transparent;
+}
+
+.pokemon-card-select:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.05);
+}
+
+.pokemon-card-select.selected {
+  background: white;
+  border-color: #facc15;
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.pokemon-card-select img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.pokemon-card-select__name {
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-top: 6px;
+}
+
+.pokemon-card-select.selected .pokemon-card-select__name {
+  color: #1a1a1a;
+}
+
+.pokemon-card-select__hp {
+  color: #fecaca;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.pokemon-card-select.selected .pokemon-card-select__hp {
+  color: #6b7280;
+}
+
+.selection__btn {
+  padding: 14px 48px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+.selection__btn.ready {
+  background-color: #facc15;
+  color: #1a1a1a;
+}
+
+.selection__btn.ready:hover {
+  background-color: #fde047;
+  transform: scale(1.05);
+}
+
+.selection__btn.disabled {
+  background-color: #6b7280;
+  color: #d1d5db;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

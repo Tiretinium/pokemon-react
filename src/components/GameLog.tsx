@@ -12,11 +12,11 @@ const GameLog: React.FC<GameLogProps> = ({ messages }) => {
   }, [messages]);
 
   return (
-    <div className="bg-gray-900 border-2 border-gray-600 rounded-xl p-3 h-28 overflow-y-auto shadow-inner">
+    <div className="gamelog">
       {messages.map((msg, i) => (
         <p
           key={i}
-          className={`text-sm ${i === messages.length - 1 ? 'text-white font-semibold' : 'text-gray-400'}`}
+          className={i === messages.length - 1 ? 'gamelog__line--latest' : 'gamelog__line--old'}
         >
           {msg}
         </p>

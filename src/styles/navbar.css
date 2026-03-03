@@ -1,0 +1,55 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background-color: #dc2626;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.navbar__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.navbar__logo span {
+  font-size: 1.5rem;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+.navbar__link {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: white;
+  transition: background 0.15s;
+}
+
+.navbar__link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar__link.active {
+  background-color: #facc15;
+  color: #1a1a1a;
+}

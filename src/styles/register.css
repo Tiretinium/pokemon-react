@@ -1,0 +1,184 @@
+/* ===== REGISTER PAGE ===== */
+.register-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2a75bb 0%, #1e5a8e 50%, #163d5f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pokéball animée en arrière-plan */
+.register-page::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: 
+        radial-gradient(circle at 50% 50%, transparent 45%, #1a1a1a 45%, #1a1a1a 55%, transparent 55%),
+        linear-gradient(to bottom, #ff0000 0%, #ff0000 45%, #1a1a1a 45%, #1a1a1a 55%, #ffffff 55%, #ffffff 100%);
+    border-radius: 50%;
+    border: 8px solid #1a1a1a;
+    top: -150px;
+    right: -150px;
+    opacity: 0.35;
+    animation: rotatePokeball 20s linear infinite;
+}
+
+.register-page::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: 
+        radial-gradient(circle at 50% 50%, transparent 45%, #1a1a1a 45%, #1a1a1a 55%, transparent 55%),
+        linear-gradient(to bottom, #ff0000 0%, #ff0000 45%, #1a1a1a 45%, #1a1a1a 55%, #ffffff 55%, #ffffff 100%);
+    border-radius: 50%;
+    border: 6px solid #1a1a1a;
+    bottom: -120px;
+    left: -120px;
+    opacity: 0.3;
+    animation: rotatePokeball 15s linear infinite reverse;
+}
+
+@keyframes rotatePokeball {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.register-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    padding: 40px 32px;
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid #ffcb05;
+}
+
+.register-card__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.register-card__icon {
+    width: 180px;
+    height: 200px;
+    rotate: -270deg;
+    object-fit: contain;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.register-card__title {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #2a75bb;
+    text-shadow: 2px 2px 0px #ffcb05;
+}
+
+.register-card__subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-field label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #2a75bb;
+}
+
+.form-field input {
+    padding: 10px 16px;
+    border: 2px solid #ffcb05;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.form-field input:focus {
+    border-color: #2a75bb;
+    box-shadow: 0 0 0 3px rgba(42, 117, 187, 0.1);
+}
+
+.register-btn {
+    margin-top: 8px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ffcb05 0%, #ffd700 100%);
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border: 3px solid #b8860b;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 203, 5, 0.4);
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg, #ffd700 0%, #ffcb05 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 203, 5, 0.5);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== SUCCESS STATE ===== */
+.register-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.register-success__icon { 
+    font-size: 4rem;
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.register-success__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #2a75bb;
+    text-shadow: 1px 1px 0px #ffcb05;
+}
+
+.register-success__text {
+    color: #6b7280;
+    text-align: center;
+}
+
+.register-success__text strong {
+    color: #ff6b6b;
+    font-weight: 800;
+}

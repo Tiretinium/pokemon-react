@@ -1,0 +1,19 @@
+/* ===== GAME LOG ===== */
+.gamelog {
+  background-color: #111827;
+  border: 2px solid #4b5563;
+  border-radius: 12px;
+  padding: 12px;
+  height: 112px;
+  overflow-y: auto;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.gamelog p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.gamelog__line--old    { color: #9ca3af; }
+.gamelog__line--latest { color: white; font-weight: 700; }

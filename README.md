@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# ⚡ Pokémon Battle — React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un jeu de combat Pokémon au tour par tour développé avec **React**, **TypeScript** et **Tailwind CSS**.
 
-## Available Scripts
+## 🎮 Fonctionnalités
 
-In the project directory, you can run:
+- **Écran de sélection** : choisissez votre Pokémon 
+- **Combat au tour par tour** : utilisez l'une de vos 4 attaques pour affronter un adversaire choisi aléatoirement
+- **Système de types** : les faiblesses et résistances sont prises en compte (super efficace, peu efficace…)
+- **IA adversaire** : l'adversaire choisit aléatoirement une attaque disponible à chaque tour
+- **Animations** : effets visuels lors des attaques et des dégâts reçus
+- **Journal de combat** : suivi en temps réel des actions et des dégâts infligés
+- **Barre de HP** : change de couleur selon les points de vie restants (vert → jaune → rouge)
 
-### `npm start`
+## 🚀 Lancer le projet
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prérequis
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Node.js](https://nodejs.org/) (version 16 ou supérieure)
+- npm
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+### Démarrer en mode développement
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+L'application s'ouvre automatiquement sur [http://localhost:3000](http://localhost:3000).  
+La page se recharge automatiquement à chaque modification du code.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Construire pour la production
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Génère une version optimisée dans le dossier `build/`, prête à être déployée.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Lancer les tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🗂️ Structure du projet
 
-## Learn More
+```
+src/
+├── App.tsx                  # Composant principal + logique de combat
+├── components/
+│   ├── SelectionScreen.tsx  # Écran de sélection du Pokémon
+│   ├── PokemonCard.tsx      # Carte d'un Pokémon (sprite + barre HP)
+│   └── GameLog.tsx          # Journal des actions de combat
+├── data/
+│   └── pokemons.ts          # Données des 8 Pokémon disponibles
+└── types/
+    └── pokemon.ts           # Types TypeScript (Pokemon, Move…)
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠️ Technologies utilisées
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Technologie | Rôle |
+|---|---|
+| [React 19](https://react.dev/) | Interface utilisateur |
+| [TypeScript](https://www.typescriptlang.org/) | Typage statique |
+| [Tailwind CSS 3](https://tailwindcss.com/) | Styles et mise en page |
+| [PokéAPI Sprites](https://github.com/PokeAPI/sprites) | Images des Pokémon |
+
+## 📖 Comment jouer ?
+
+1. **Choisissez votre Pokémon** sur l'écran de sélection
+2. Cliquez sur **"Fight with [Nom] !"** pour lancer le combat
+3. Sélectionnez une **attaque** parmi les 4 disponibles à chaque tour
+4. Battez le Pokémon adverse avant de tomber à 0 HP
+5. En fin de partie, cliquez sur **"Play Again"** pour recommencer
