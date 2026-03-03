@@ -34,6 +34,13 @@ body {
 .type-Rock     { background-color: #a16207; }
 .type-Ice      { background-color: #67e8f9; color: #1a1a1a; }
 .type-Dragon   { background-color: #4338ca; }
+.type-Ghost    { background-color: #7c3aed; }
+.type-Poison   { background-color: #9333ea; }
+.type-Ground   { background-color: #92400e; }
+.type-Flying   { background-color: #7dd3fc; color: #1a1a1a; }
+.type-Bug      { background-color: #65a30d; }
+.type-Steel    { background-color: #6b7280; }
+.type-Dark     { background-color: #1f2937; }
 
 /* ===== MOVE BUTTON COLORS ===== */
 .move-btn {
@@ -68,3 +75,10 @@ body {
 .move-Rock     { background-color: #a16207; }
 .move-Ice      { background-color: #67e8f9; color: #1a1a1a; }
 .move-Dragon   { background-color: #4338ca; }
+.move-Ghost    { background-color: #7c3aed; }
+.move-Poison   { background-color: #9333ea; }
+.move-Ground   { background-color: #92400e; }
+.move-Flying   { background-color: #7dd3fc; color: #1a1a1a; }
+.move-Bug      { background-color: #65a30d; }
+.move-Steel    { background-color: #6b7280; }
+.move-Dark     { background-color: #1f2937; }

@@ -8,7 +8,14 @@ export type PokemonType =
   | 'Fighting'
   | 'Rock'
   | 'Ice'
-  | 'Dragon';
+  | 'Dragon'
+  | 'Ghost'
+  | 'Poison'
+  | 'Ground'
+  | 'Flying'
+  | 'Bug'
+  | 'Steel'
+  | 'Dark';
 
 export interface Move {
   name: string;
