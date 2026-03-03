@@ -172,3 +172,4 @@ src/
 | `/` | 🏠 Home | Sélection et combat Pokémon |
 | `/pokedex` | 📖 Pokédex | Tous les Pokémon avec leurs stats |
 | `/register` | 🎮 S'inscrire | Formulaire de création de compte |
+ Pour profiter de la sélection avec plus de 4 attaques, relance : node scripts/fetchPokemons.mjs

@@ -62,16 +62,15 @@ async function fetchPokemon(idOrName) {
   const attack = getstat('attack');
   const defense = getstat('defense');
   const speed = getstat('speed');
-
-  // Pick up to 4 moves that have actual power (attacking moves)
-  // Filter: moves with power > 0, sort by power descending, take top 4
+  // Pick up to 10 moves that have actual power (attacking moves)
+  // We store more moves so the player can choose 4 during selection
   const movesWithPower = data.moves
     .filter(m => m.version_group_details.length > 0)
-    .slice(0, 20); // limit API calls – check first 20 moves
+    .slice(0, 40); // limit API calls – check first 40 moves
 
   const moveDetails = [];
   for (const moveEntry of movesWithPower) {
-    if (moveDetails.length >= 4) break;
+    if (moveDetails.length >= 10) break;
     try {
       const detail = await fetchMoveDetails(moveEntry.move.url);
       if (detail.power > 0) {
