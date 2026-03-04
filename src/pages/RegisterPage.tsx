@@ -1,22 +1,42 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { authApi } from '../services/api';
+
 export default function RegisterPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ username: '', email: '', password: '', confirm: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setError(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (form.password !== form.confirm) {
-      alert('Les mots de passe ne correspondent pas !');
+      setError('Les mots de passe ne correspondent pas !');
       return;
     }
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      await authApi.register({
+        username: form.username,
+        email: form.email,
+        password: form.password,
+      });
+      setSuccess(true);
+      setTimeout(() => navigate('/login'), 2000);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  if (submitted) {
+  if (success) {
     return (
       <div className="register-page">
         <div className="register-card">
@@ -24,7 +44,7 @@ export default function RegisterPage() {
             <span className="register-success__icon">🎉</span>
             <h2 className="register-success__title">Inscription réussie !</h2>
             <p className="register-success__text">
-              Bienvenue, <strong>{form.username}</strong> ! Tu peux maintenant combattre des Pokémon.
+              Bienvenue, <strong>{form.username}</strong> ! Redirection vers la connexion...
             </p>
           </div>
         </div>
@@ -61,10 +81,13 @@ export default function RegisterPage() {
             <label>Confirmer le mot de passe</label>
             <input type="password" name="confirm" required value={form.confirm}
               onChange={handleChange} placeholder="••••••••" />
-          </div>
-          <button type="submit" className="register-btn">
-            S'inscrire
+          </div>          <button type="submit" className="register-btn" disabled={loading}>
+            {loading ? 'Inscription...' : "S'inscrire"}
           </button>
+          {error && <p className="form-error">{error}</p>}
+          <p className="form-link">
+            Déjà un compte ? <Link to="/login">Se connecter</Link>
+          </p>
         </form>
       </div>
     </div>
