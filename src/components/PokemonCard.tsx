@@ -43,7 +43,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, isPlayer, isAttackin
       </div>
       <div className={`pcard__sprite ${isPlayer ? 'pcard__sprite--player' : 'pcard__sprite--opponent'}`}>
         <img
-          src={isPlayer ? pokemon.backSprite : pokemon.sprite}
+          src={pokemon.sprite}
           alt={pokemon.name}
         />
       </div>

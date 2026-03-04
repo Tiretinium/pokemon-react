@@ -11,23 +11,23 @@
 
 .battle-arena {
   width: 100%;
-  max-width: 640px;
+  max-width: 860px;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(8px);
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  padding: 24px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .battle-field {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 16px;
-  min-height: 208px;
+  padding: 0 24px;
+  min-height: 260px;
 }
 
 .battle-moves {

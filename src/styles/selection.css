@@ -25,15 +25,21 @@
 
 .selection__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   width: 100%;
-  max-width: 720px;
+  max-width: 1100px;
 }
 
 @media (min-width: 640px) {
   .selection__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .selection__grid {
+    grid-template-columns: repeat(8, 1fr);
   }
 }
 

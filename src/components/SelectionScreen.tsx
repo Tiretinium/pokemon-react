@@ -62,7 +62,7 @@ const SelectionScreen: React.FC<SelectionScreenProps> = ({ onSelect }) => {
   if (step === 'pokemon') {
     return (
       <div className="selection">
-        <h1 className="selection__title">⚡ Pokémon Battle</h1>
+        <h1 className="selection__title"> Pokémon Battle</h1>
         <p className="selection__subtitle">Choisis ton Pokémon pour combattre !</p>
         <div className="selection__grid">
           {pokemons.map((pokemon) => {
@@ -146,7 +146,7 @@ const SelectionScreen: React.FC<SelectionScreenProps> = ({ onSelect }) => {
           disabled={selectedMoves.length !== 4}
           className={`selection__btn ${selectedMoves.length === 4 ? 'ready' : 'disabled'}`}
         >
-          {selectedMoves.length === 4 ? `⚔️ Lancer le combat !` : `Sélectionne 4 attaques (${selectedMoves.length}/4)`}
+          {selectedMoves.length === 4 ? ` Lancer le combat !` : `Sélectionne 4 attaques (${selectedMoves.length}/4)`}
         </button>
       </div>
     </div>

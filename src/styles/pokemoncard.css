@@ -1,17 +1,41 @@
 /* ===== POKEMON CARD (Battle) ===== */
+
+@keyframes slash-player {
+  0%   { transform: translateX(0)      scale(1);    }
+  20%  { transform: translateX(60px)   scale(1.15); }
+  45%  { transform: translateX(120px)  scale(1.2);  }
+  55%  { transform: translateX(130px)  scale(0.95); }
+  100% { transform: translateX(0)      scale(1);    }
+}
+
+@keyframes slash-opponent {
+  0%   { transform: translateX(0)       scale(1);    }
+  20%  { transform: translateX(-60px)   scale(1.15); }
+  45%  { transform: translateX(-120px)  scale(1.2);  }
+  55%  { transform: translateX(-130px)  scale(0.95); }
+  100% { transform: translateX(0)       scale(1);    }
+}
+
+@keyframes hurt-flash {
+  0%, 100% { opacity: 1;    filter: none; }
+  20%       { opacity: 0.2; filter: brightness(3) saturate(0); }
+  40%       { opacity: 0.8; filter: none; }
+  60%       { opacity: 0.2; filter: brightness(3) saturate(0); }
+  80%       { opacity: 0.8; filter: none; }
+}
+
 .pcard {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: transform 0.15s, opacity 0.15s;
 }
 
 .pcard--player { align-items: flex-start; }
 .pcard--opponent { align-items: flex-end; }
 
-.pcard--attacking-player  { transform: translateX(32px); }
-.pcard--attacking-opponent{ transform: translateX(-32px); }
-.pcard--hurt { opacity: 0.45; }
+.pcard--attacking-player  { animation: slash-player  0.5s ease-in-out forwards; }
+.pcard--attacking-opponent{ animation: slash-opponent 0.5s ease-in-out forwards; }
+.pcard--hurt              { animation: hurt-flash     0.5s ease forwards; }
 
 .pcard__info {
   background: rgba(255,255,255,0.92);
@@ -69,5 +93,5 @@
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
-.pcard__sprite--player img  { width: 144px; height: 144px; image-rendering: pixelated; }
-.pcard__sprite--opponent img{ width: 112px; height: 112px; }
+.pcard__sprite--player img  { width: 180px; height: 180px; }
+.pcard__sprite--opponent img{ width: 150px; height: 150px; }
